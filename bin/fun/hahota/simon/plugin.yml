@@ -1,0 +1,5 @@
+main: fun.hahota.simon.Main
+name: SetScoreboard
+version: 1.0
+author: Simon
+api-version: 1.16
