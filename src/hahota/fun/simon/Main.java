@@ -11,6 +11,7 @@ import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Score;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.ScoreboardManager;
+import org.bukkit.scoreboard.Team;
 
 import net.md_5.bungee.api.ChatColor;
 
@@ -33,19 +34,18 @@ public class Main extends JavaPlugin implements Listener {
     public void join(PlayerJoinEvent event) {
     	Player player = event.getPlayer();
     	
-    	ScoreboardManager m = Bukkit.getScoreboardManager();
-    	Scoreboard b = m.getNewScoreboard();
-    	
+    	ScoreboardManager manager = Bukkit.getScoreboardManager();
+    	Scoreboard board = manager.getNewScoreboard();
     	@SuppressWarnings("deprecation")
-		Objective o = b.registerNewObjective("Hahota1", "");
-    	o.setDisplaySlot(DisplaySlot.SIDEBAR);
-    	o.setDisplayName(ChatColor.translateAlternateColorCodes('&', "" + getConfig().getString("Title")));
-    		
+		Objective objective = board.registerNewObjective("test", "dummy");
+    	objective.setDisplaySlot(DisplaySlot.SIDEBAR);
+    	objective.setDisplayName(ChatColor.translateAlternateColorCodes('&', "" + getConfig().getString("Title")));
+    	@SuppressWarnings("unused")
+		Team team = board.registerNewTeam("teamname");
+    	Score score = objective.getScore(ChatColor.GREEN + "First Score"); 
+    	score.setScore(1);  	
     	
-    	Score gold = o.getScore(ChatColor.DARK_AQUA + "By Simon");
-    	gold.setScore(1);
-    	
-    	player.setScoreboard(b);
+    	player.setScoreboard(board);
     	
     }
 }
