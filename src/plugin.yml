@@ -1,4 +1,4 @@
-main: fun.hahota.simon.Main
+main: hahota.fun.simon.Main
 name: SetScoreboard
 version: 1.0
 author: Simon

@@ -1,4 +1,4 @@
-package fun.hahota.simon;
+package hahota.fun.simon;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
