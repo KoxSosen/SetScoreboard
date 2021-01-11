@@ -43,6 +43,10 @@ public class Main extends JavaPlugin implements Listener {
     	
     	Score gold = o.getScore(ChatColor.DARK_AQUA + "By Simon");
     	gold.setScore(1);
+    	Score red = o.getScore(ChatColor.DARK_AQUA + "By Simon");
+    	red.setScore(2);
+    	Score blue = o.getScore(ChatColor.DARK_AQUA + "By Simon");
+    	blue.setScore(3);
     	
     	player.setScoreboard(b);
     	
