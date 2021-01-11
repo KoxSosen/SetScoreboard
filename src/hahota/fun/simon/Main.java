@@ -19,8 +19,16 @@ public class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         this.getServer().getPluginManager().registerEvents(this, this);
+		this.getConfig().options().copyDefaults();
+		saveDefaultConfig();
     }
-
+    
+    
+    @Override
+    public void onDisable() {
+		getLogger().info(ChatColor.RED + "Goodbye!");
+    	
+    }
     @EventHandler
     public void join(PlayerJoinEvent event) {
     	Player player = event.getPlayer();
