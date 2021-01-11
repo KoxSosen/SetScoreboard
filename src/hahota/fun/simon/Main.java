@@ -1,8 +1,6 @@
 package hahota.fun.simon;
 
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -39,9 +37,9 @@ public class Main extends JavaPlugin implements Listener {
     	Scoreboard b = m.getNewScoreboard();
     	
     	@SuppressWarnings("deprecation")
-		Objective o = b.registerNewObjective(ChatColor.translateAlternateColorCodes('&', "" + getConfig().getString("title")));
+		Objective o = b.registerNewObjective("Hahota", "");
     	o.setDisplaySlot(DisplaySlot.SIDEBAR);
-    	o.setDisplayName(ChatColor.DARK_AQUA + "Survival V2");
+    	o.setDisplayName(ChatColor.translateAlternateColorCodes('&', "" + getConfig().getString("Title")));
     	
     	Score gold = o.getScore(ChatColor.DARK_AQUA + "By Simon");
     	gold.setScore(1);
