@@ -37,16 +37,13 @@ public class Main extends JavaPlugin implements Listener {
     	Scoreboard b = m.getNewScoreboard();
     	
     	@SuppressWarnings("deprecation")
-		Objective o = b.registerNewObjective("Hahota", "");
+		Objective o = b.registerNewObjective("Hahota1", "");
     	o.setDisplaySlot(DisplaySlot.SIDEBAR);
     	o.setDisplayName(ChatColor.translateAlternateColorCodes('&', "" + getConfig().getString("Title")));
+    		
     	
     	Score gold = o.getScore(ChatColor.DARK_AQUA + "By Simon");
     	gold.setScore(1);
-    	Score red = o.getScore(ChatColor.DARK_AQUA + "By Simon");
-    	red.setScore(2);
-    	Score blue = o.getScore(ChatColor.DARK_AQUA + "By Simon");
-    	blue.setScore(3);
     	
     	player.setScoreboard(b);
     	
